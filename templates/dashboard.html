@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <a href="/">Back to Transactions</a>
+
+  <h2>Summary</h2>
+  <p>Total Income: {{ stats.income }} SAR</p>
+  <p>Total Expense: {{ stats.expense }} SAR</p>
+  <p>Balance: {{ stats.balance }} SAR</p>
+
+  <h2>Spending by Category</h2>
+  <ul>
+    {% for c in stats.by_category %}
+      <li>{{ c.category }}: {{ c.total }} SAR</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
