@@ -1,36 +1,40 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <title>Add Transaction</title>
-  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" >
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
+
 <body>
-  <h1>Add New Transaction</h1>
-  <form method="POST">
-    <label>Type:</label>
-    <select name="type">
-      <option value="income">Income</option>
-      <option value="expense">Expense</option>
-    </select>
-    <br><br>
-
-    <label>Category:</label>
-    <input type="text" name="category">
-    <br><br>
-
-    <label>Amount:</label>
-    <input type="text" name="amount">
-    <br><br>
-
-    <label>Date:</label>
-    <input type="date" name="date">
-    <br><br>
-
-    <label>Description:</label>
-    <input type="text" name="description">
-    <br><br>
-
+  <form method="POST" class="form-card">
+    <h1>Add New Transaction</h1>
+    <div class="field">
+      <label for="type">Type</label>
+      <select id="type" name="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="category">Category</label>
+      <input type="text" id="category" name="category">
+    </div>
+    <div class="field">
+      <label for="amount">Amount</label>
+      <input type="text" id="amount" name="amount">
+    </div>
+    <div class="field">
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date">
+    </div>
+    <div class="field">
+      <label for="description">Description</label>
+      <input type="text" id="description" name="description">
+    </div>
     <button type="submit" class="btn">Save</button>
+    <a href="/" class="btn btn-secondary">Cancel</a>
   </form>
 </body>
+
 </html>

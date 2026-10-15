@@ -1,37 +1,41 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <title>Edit Transaction</title>
-  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" >
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 
 </head>
+
 <body>
-  <h1>Edit Transaction</h1>
-  <form method="POST">
-    <label>Type:</label>
-    <select name="type">
-      <option value="income" {% if t.type == "income" %}selected{% endif %}>Income</option>
-      <option value="expense" {% if t.type == "expense" %}selected{% endif %}>Expense</option>
-    </select>
-    <br><br>
-
-    <label>Category:</label>
-    <input type="text" name="category" value="{{ t.category }}">
-    <br><br>
-
-    <label>Amount:</label>
-    <input type="text" name="amount" value="{{ t.amount }}">
-    <br><br>
-
-    <label>Date:</label>
-    <input type="date" name="date" value="{{ t.date }}">
-    <br><br>
-
-    <label>Description:</label>
-    <input type="text" name="description" value="{{ t.description }}">
-    <br><br>
-
+  <form method="POST" class="form-card">
+    <h1>Edit Transaction</h1>
+    <div class="field">
+      <label>Type:</label>
+      <select name="type">
+        <option value="income" {% if t.type=="income" %}selected{% endif %}>Income</option>
+        <option value="expense" {% if t.type=="expense" %}selected{% endif %}>Expense</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="category">Category</label>
+      <input type="text" id="category" name="category" value="{{ t.category }}">
+    </div>
+    <div class="field">
+      <label for="amount">Amount</label>
+      <input type="text" id="amount" name="amount" value="{{ t.amount }}">
+    </div>
+    <div class="field">
+      <label for="date">Date </label>
+      <input type="date" id="date" name="date" value="{{ t.date }}">
+    </div>
+    <div class="field">
+      <label for="description">Description</label>
+      <input type="text" id="description" name="description" value="{{ t.description }}">
+    </div>
     <button type="submit" class="btn">Save Changes</button>
+    <a href="/" class="btn btn-secondary">Cancel</a>
   </form>
 </body>
+
 </html>
