@@ -2,21 +2,36 @@
 <html lang="en">
 <head>
   <title>Dashboard</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" >
 </head>
 <body>
   <h1>Dashboard</h1>
-  <a href="/">Back to Transactions</a>
-
-  <h2>Summary</h2>
-  <p>Total Income: {{ stats.income }} SAR</p>
-  <p>Total Expense: {{ stats.expense }} SAR</p>
-  <p>Balance: {{ stats.balance }} SAR</p>
+  <a href="/" class="btn">Back to Transactions</a>
+  <div class="cards">
+    <div class="card">
+      <h3>Total Income</h3>
+      <p> {{ stats.income }} SAR</p>
+    </div>
+    <div class="card">
+      <h3>Total Expense </h3>
+      <p> {{ stats.expense }} SAR</p>
+    </div>
+    <div class="card">
+      <h3>Total Balance</h3>
+      <p> {{ stats.balance }} SAR</p>
+    </div>
+  </div>
 
   <h2>Spending by Category</h2>
-  <ul>
-    {% for c in stats.by_category %}
-      <li>{{ c.category }}: {{ c.total }} SAR</li>
-    {% endfor %}
-  </ul>
+  {% for c in stats.by_category %}
+<div class="category">
+  <div class="category-info">
+    <span>{{ c.category }}</span>
+    <span>{{ c.total }} SAR</span>
+  </div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width: {{ c.total / stats.expense * 100 }}%"></div>
+  </div>
+</div> {% endfor %}
 </body>
 </html>
