@@ -64,6 +64,17 @@ body {
     outline: 3px solid rgba(8, 72, 190, 0.4);
     outline-offset: 2px;
 }
+
+.btn-sm{
+    padding: 5px 12px;
+    font-size: 13px;
+}
+.btn-danger{
+    background-color: #dc2626;
+}
+.btn-danger:hover{
+    background-color: #991b2b;
+}
 table{
     margin-top: 10px;
     width: 100%;
@@ -92,20 +103,20 @@ tbody tr:hover{
     font-size: 13px;
 }
 .badge.income {
-    background-color: #dcfce7;
+    background-color: #ccf5da;
     color: #166534;
 }
 
 .badge.expense {
-    background-color: #fee2e2;
+    background-color: #f7cccc;
     color: #991b1b;
 }
 
 .amount.income {
     font-weight: bold;
-    color: green;
+    color: rgb(46, 146, 46);
 }
 .amount.expense {
     font-weight: bold;
-    color: red;
+    color: rgb(150, 34, 34);
 }

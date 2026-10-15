@@ -33,9 +33,9 @@
         <td>{{t.description}}</td>
         <td class=" amount {{ t.type }}"> {{t.amount }}</td>
         <td>
-          <a href="/edit/{{ t.id }}">Edit</a>
+          <a href="/edit/{{ t.id }}" class="btn btn-sm">Edit</a>
           <form method="POST" action="/delete/{{ t.id }}" style="display:inline;">
-            <button type="submit">Delete</button>
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
           </form>
         </td>
       </tr>
